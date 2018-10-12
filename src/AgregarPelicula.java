@@ -1,13 +1,9 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.Panel;
-import java.awt.Scrollbar;
 import java.awt.ScrollPane;
 import java.awt.Button;
 import java.awt.event.ActionListener;

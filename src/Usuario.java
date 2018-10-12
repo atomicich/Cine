@@ -99,7 +99,7 @@ public class Usuario {
 	
 	public boolean sosElUsuario(String nombreUsuario) 
 	{
-		return  this.nombreUsuario==nombreUsuario;
+		return this.nombreUsuario==nombreUsuario;
 	}
 	
 }

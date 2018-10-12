@@ -11,27 +11,17 @@ import java.awt.event.ActionEvent;
 public class MenuAdministrador extends JFrame {
 
 	private JPanel contentPane;
+	private Cine cine;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuAdministrador frame = new MenuAdministrador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public MenuAdministrador() {
+	public MenuAdministrador(Cine cin) {
+		cine=cin;
 		setTitle("MENU ADMINISTRADOR");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -40,9 +30,15 @@ public class MenuAdministrador extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Establecimiento");
-		btnNewButton.setBounds(167, 42, 140, 23);
-		contentPane.add(btnNewButton);
+		JButton Establecimientos = new JButton("Establecimiento");
+		Establecimientos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MenuEstablecimiento app = new MenuEstablecimiento(cine);
+				app.setVisible(true);
+			}
+		});
+		Establecimientos.setBounds(167, 42, 140, 23);
+		contentPane.add(Establecimientos);
 		
 		JButton btnNewButton_1 = new JButton("Sala");
 		btnNewButton_1.setBounds(167, 96, 140, 23);

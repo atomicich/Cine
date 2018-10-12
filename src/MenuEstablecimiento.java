@@ -4,40 +4,23 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.ScrollPane;
-import java.awt.Button;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JButton;
 
 public class MenuEstablecimiento extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private Cine cine;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuEstablecimiento frame = new MenuEstablecimiento();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public MenuEstablecimiento() {
-		setTitle("ESTABLECIMIENTOS");
+	public MenuEstablecimiento(Cine cin) {
+		cine=cin;
+		setTitle("Menu Establecimiento");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,32 +28,22 @@ public class MenuEstablecimiento extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
-		textField = new JTextField();
-		textField.setBounds(181, 37, 173, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		ScrollPane scrollPane = new ScrollPane();
-		scrollPane.setBounds(58, 80, 296, 100);
-		contentPane.add(scrollPane);
-		
-		Button button = new Button("CONFIRMAR");
-		button.addActionListener(new ActionListener() {
+		JButton AgregarEstablecimiento = new JButton("Agregar Establecimiento");
+		AgregarEstablecimiento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuSalas app = new MenuSalas();
+				AgregarEstablecimiento app = new AgregarEstablecimiento(cine);
 				app.setVisible(true);
 			}
 		});
-		button.setBounds(70, 220, 70, 22);
-		contentPane.add(button);
+		AgregarEstablecimiento.setBounds(133, 43, 190, 23);
+		contentPane.add(AgregarEstablecimiento);
 		
-		Button button_1 = new Button("CANCELAR");
-		button_1.setBounds(272, 220, 70, 22);
-		contentPane.add(button_1);
+		JButton ModEstablecimiento = new JButton("Modificar Establecimiento");
+		ModEstablecimiento.setBounds(133, 124, 190, 23);
+		contentPane.add(ModEstablecimiento);
 		
-		JButton btnNewButton = new JButton("buscar");
-		btnNewButton.setBounds(364, 36, 68, 18);
-		contentPane.add(btnNewButton);
+		JButton EliminEstablecimiento = new JButton("Eliminar Establecimiento");
+		EliminEstablecimiento.setBounds(133, 198, 190, 23);
+		contentPane.add(EliminEstablecimiento);
 	}
 }

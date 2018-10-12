@@ -10,24 +10,12 @@ import java.awt.event.ActionEvent;
 
 public class MenuOperador extends JFrame {
 
-	private JPanel contentPane;
-	private static Cine cine;
-
 	/**
-	 * Launch the application.
+	 * 
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuOperador frame = new MenuOperador(cine);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private Cine cine;
 
 	/**
 	 * Create the frame.
@@ -58,7 +46,7 @@ public class MenuOperador extends JFrame {
 		contentPane.add(btnEstablecimientos);
 		btnEstablecimientos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuEstablecimiento app = new MenuEstablecimiento();
+				MenuEstablecimiento app = new MenuEstablecimiento(cine);
 				app.setVisible(true);
 			}
 		});
