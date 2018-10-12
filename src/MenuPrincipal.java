@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -54,13 +53,6 @@ public class MenuPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblUsuario = DefaultComponentFactory.getInstance().createLabel("USUARIO:");
-		lblUsuario.setBounds(67, 48, 92, 14);
-		contentPane.add(lblUsuario);
-		
-		JLabel lblContrasea = DefaultComponentFactory.getInstance().createLabel("CONTRASE\u00D1A:");
-		lblContrasea.setBounds(67, 141, 92, 14);
-		contentPane.add(lblContrasea);
 		
 		usuario = new JTextField();
 		usuario.setBounds(169, 45, 114, 20);

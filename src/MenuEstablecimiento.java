@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextField;
 import java.awt.ScrollPane;
 import java.awt.Button;
@@ -46,9 +45,6 @@ public class MenuEstablecimiento extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblEstablecimientos = DefaultComponentFactory.getInstance().createLabel("ESTABLECIMIENTOS:");
-		lblEstablecimientos.setBounds(58, 40, 112, 14);
-		contentPane.add(lblEstablecimientos);
 		
 		textField = new JTextField();
 		textField.setBounds(181, 37, 173, 20);

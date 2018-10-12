@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextField;
 import java.awt.ScrollPane;
 import java.awt.Button;
@@ -44,10 +43,6 @@ public class MenuSalas extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblSalas = DefaultComponentFactory.getInstance().createLabel("SALAS:");
-		lblSalas.setBounds(53, 61, 67, 14);
-		contentPane.add(lblSalas);
 		
 		textField = new JTextField();
 		textField.setBounds(170, 55, 151, 20);

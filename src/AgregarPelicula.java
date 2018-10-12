@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextField;
 import java.awt.Panel;
 import java.awt.Scrollbar;
@@ -47,9 +46,6 @@ public class AgregarPelicula extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCodigo = DefaultComponentFactory.getInstance().createLabel("CODIGO:");
-		lblCodigo.setBounds(89, 59, 92, 14);
-		contentPane.add(lblCodigo);
 		
 		codigo = new JTextField();
 		codigo.setBounds(191, 56, 116, 20);

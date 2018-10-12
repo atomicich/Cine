@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextField;
 
 public class CrearUsuario extends JFrame {
@@ -41,9 +40,6 @@ public class CrearUsuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("nombre de usuario:");
-		lblNewJgoodiesLabel.setBounds(57, 33, 107, 14);
-		contentPane.add(lblNewJgoodiesLabel);
 		
 		textField = new JTextField();
 		textField.setBounds(206, 30, 141, 20);
