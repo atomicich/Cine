@@ -22,6 +22,16 @@ public class Establecimiento {
 	public int getCuit() {
 		return cuit;
 	}
+	
+	
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setDomicilio(String domicilio) {
+		this.domicilio = domicilio;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -48,20 +58,35 @@ public class Establecimiento {
 		this.estado = estado;
 	}
 
-	public void agregarSala(String nombre){
+	public boolean agregarSala(String nombre){
 		if(buscarSala(nombre)==null){
 			salas.add(new Sala(nombre));
+			cantSalas++;
+			return true;
 		}
+		return false;
 		
 	}
 	
-	private Sala buscarSala(String nombre){
+	/*public Sala buscarSala(String nombre){
 		for(Sala s : salas){
 			if(s.sosSala(nombre))
 				return s;
 		}
 		return null;
+	}*/
+	
+	public Sala buscarSala(String nombre)
+	{
+		for (int i=0;i< salas.size();i++)
+		{
+			Sala a = (Sala)salas.elementAt(i);
+			if (a.getNombre().equalsIgnoreCase(nombre)&&a.isEstado())
+				return a;
+		} 
+		return null;
 	}
+	
 	
 	public void agregarFuncion(String sala, Pelicula pelicula, int franjaHoraria, int codigo){
 		if(buscarSala(sala)!=null)
@@ -84,6 +109,19 @@ public class Establecimiento {
 	
 	public boolean sosEstablecimiento(int cuit){
 		return this.cuit==cuit;
+	}
+	
+	public void generarAsientos(String nombre, int f, int c){
+		Sala a = buscarSala(nombre);
+		a.generarAsientos(f, c);
+	}
+	
+	public boolean agregarAsiento(String nombreSala, char f, int c){
+		Sala a = buscarSala(nombreSala);
+		if(a.agregarAsiento(f, c))
+			return true;
+		return false;
+			
 	}
 
 }

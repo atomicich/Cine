@@ -41,17 +41,29 @@ public class MenuAdministrador extends JFrame {
 		contentPane.add(Establecimientos);
 		
 		JButton btnNewButton_1 = new JButton("Sala");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MenuSala app2 = new MenuSala(cine);
+				app2.setVisible(true);
+			}
+		});
 		btnNewButton_1.setBounds(167, 96, 140, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Asientos");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MenuAsientos app3 = new MenuAsientos(cine);
+				app3.setVisible(true);
+			}
+		});
 		btnNewButton_2.setBounds(167, 152, 140, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Gestion usuarios");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CrearUsuario app = new CrearUsuario();
+				MenuUsuario app = new MenuUsuario(cine);
 				app.setVisible(true);
 			}
 		});

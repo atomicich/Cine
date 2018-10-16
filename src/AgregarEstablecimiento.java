@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
@@ -60,15 +61,26 @@ public class AgregarEstablecimiento extends JFrame {
 		JButton btnAgregar = new JButton("Agregar");
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(cine.buscarEstablecimiento(Integer.parseInt(nroCuit.getText()))!=null){
+				if(cine.buscarEstablecimiento(Integer.parseInt(nroCuit.getText()))==null){
 					cine.agregarEstablecimiento(Integer.parseInt(nroCuit.getText()),nombre.getText(),domi.getText());
-				}
+					nombre.setText("");
+					domi.setText("");
+					nroCuit.setText("");
+					JOptionPane.showMessageDialog(null, "El Establecimiento fue agregado con exito");
+					
+				}else
+					JOptionPane.showMessageDialog(null, "El Establecimiento ya existe");
 			}
 		});
 		btnAgregar.setBounds(73, 214, 91, 23);
 		contentPane.add(btnAgregar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnCancelar.setBounds(233, 214, 91, 23);
 		contentPane.add(btnCancelar);
 	}

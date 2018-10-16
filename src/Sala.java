@@ -44,11 +44,13 @@ public class Sala {
 			}
 	}
 	
-	public void agregarAsiento(char f,int c){
+	public boolean agregarAsiento(char f,int c){
 		if(buscarAsiento(f,c)==null){
 			asientos.add(new AsientoFisico(f,c));
 			capacidad++;
+			return true;
 		}
+		return false;
 		
 	}
 	
