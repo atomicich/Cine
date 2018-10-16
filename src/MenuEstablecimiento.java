@@ -39,6 +39,12 @@ public class MenuEstablecimiento extends JFrame {
 		contentPane.add(AgregarEstablecimiento);
 		
 		JButton ModEstablecimiento = new JButton("Modificar Establecimiento");
+		ModEstablecimiento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ModificarEstablecimiento app2 = new ModificarEstablecimiento(cine);
+				app2.setVisible(true);
+			}
+		});
 		ModEstablecimiento.setBounds(133, 124, 190, 23);
 		contentPane.add(ModEstablecimiento);
 		
